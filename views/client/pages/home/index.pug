@@ -1,0 +1,33 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+include ../../mixins/product-item.pug
+
+
+block main 
+  .container.my-3
+        +box-head("Featured Products")
+
+        .row 
+          each item in featuredProducts
+            +product-item(item)
+
+  .container.my-3
+        +box-head("New Products")
+
+        .row 
+          each item in productsNew
+            +product-item(item)
+
+  .container.my-3
+        +box-head("Discount Products")
+
+        .row 
+          each item in productsDiscount
+            +product-item(item)
+
+  .container.my-3
+        +box-head("Sản phẩm gợi ý (tùy admin chọn)")
+
+        .row 
+          each item in productsChoose
+            +product-item(item)
